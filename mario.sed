@@ -332,40 +332,42 @@ s/(G|O)F/F\1/g
  s/[1-3]u//
  # Add colors to blocks
  # Sky
- s/F/\[48;5;27m \[0m/g
+ s/F/\xF0\x9F\x9F\xA6/g
  # Brick
- s/S/\[48;5;130m \[0m/g
+ s/S/\xF0\x9F\x9F\xAB/g
  # Pipe
- s/T/\[48;5;34m \[0m/g
+ s/T/\xF0\x9F\x94\x8B/g
  # Player
- s/P/\[48;5;160m \[0m/g
+ s/P/\xF0\x9F\x94\xBA/g
  # Stairs
- s/C/\[48;5;52m \[0m/g
+ s/C/\xF0\x9F\x9F\xA4/g
  # Castle
- s/B/\[48;5;124m \[0m/g
+ s/B/\xF0\x9F\x8F\xB0/g
  # Flag
- s/A/\[48;5;40m \[0m/g
+ s/A/\xF0\x9F\x8F\xB3\xEF\xB8\x8F/g
  # Black block (castle door)
- s/H/ /g
+ s/H/\xE2\xAC\x9B/g
  # Score block
- s/X/\[48;5;208m \[0m/g
+ s/X/\xF0\x9F\x92\xB0/g
  # Little Goomba
- s/(M|G)/\[48;5;88m \[0m/g
+ s/(M|G)/\xF0\x9F\x90\xB1/g
  # Koopa Troopa
- s/(K|O)/\[48;5;76m \[0m/g
+ s/(K|O)/\xF0\x9F\xA6\x8D/g
  # Empty score block
- s/D/\[48;5;137m \[0m/g
+ s/D/\xF0\x9F\x88\xB3/g
  # Flagpole
- s/E/\[48;5;27m|\[0m/g
+ s/E/\xF0\x9F\x9A\xA6/g
  # Here we prepare header by adding labels and sky blocks
  # After that we should perform coloring again
  s/\nI{34}\nI{12}x([0-9])([0-9])I{19}/\
-|FFFMARIOFFFFFFFFFFWORLDFFTIMEFFF|\
-|FFF0\200\10FFXx\1\2FFFF1-1FFFF360FFF|/
- s/F/\[48;5;27m \[0m/g
- s/X/\[48;5;214m \[0m/g
- s/(MARIO|WORLD|TIME|[0-9]{6}|x[0-9]{2}|1-1|360)/\[48;5;27m\1\[0m/g
- s/MARIO/\[48;5;27mMARIO\[0m/g
+|FFFPFFFFFFFFFFFFFFWFFFFFIFFFFFFF|\
+|FFF0\200\10FFXｘ\1\2FFFFFFF1➖1FFFF90FFFFFFF|/
+ s/F/\xF0\x9F\x9F\xA6/g
+ s/X/\[48;5;27m\xF0\x9F\x92\xB0\[0m/g
+ s/P/\[48;5;27m\xF0\x9F\x94\xBA\[0m/g
+ s/W/\[48;5;27m\xF0\x9F\x8C\x8D\[0m/g
+ s/I/\[48;5;27m\xE2\x8F\xB0\[0m/g
+ s/([0-9]{6}|ｘ[0-9]{2}|1➖1|90)/\[48;5;27m\1\[0m/g
  s/end//
  # Clear screen
  i\
@@ -382,3 +384,19 @@ WE PRESENT YOU A NEW QUEST.\n\nPLAY AGAIN/
     p;q
  }
  p
+
+# 🔺 P: プレーヤー
+# 🟦 F: 空
+# 🟫 S: 地面
+# 🔋 T: 土管
+# 🟤 C: 階段
+# 💰 X: スコアブロック
+# 🈳 D: スコアブロック（空）
+# 🐱 M: クリボー
+# 🐱 G: クリボー
+# 🦍 K: クッパ
+# 🦍 O: クッパ
+# 🏳️ A: 旗
+# 🚦 E: 旗のポール
+# 🏰 B: 城
+# ⬛ H: 黒いブロック（城のドア）
